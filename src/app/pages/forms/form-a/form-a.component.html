@@ -1,0 +1,154 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header class="form-title"> {{ t.fa.title | translate }}</nb-card-header>
+      <nb-card-body class="no-pad">
+        <nb-stepper class="no-pad" orientation="horizontal" [linear]="linearMode">
+          <nb-step [stepControl]="formAOneTwo"  class="just-breathe no-pad" label="{{ t.fah.step1 | translate }}">
+            <nb-accordion [multi]="true" class="no-pad">
+              <nb-accordion-item [expanded]="true">
+                <nb-accordion-item-header> {{ t.fah.heading0 | translate }} </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <cov-form-a-step-o></cov-form-a-step-o>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading1 | translate }}</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <cov-form-a-step-one></cov-form-a-step-one>
+                  <nb-accordion>
+                    <nb-accordion-item>
+                      <nb-accordion-item-header> {{ t.fah.heading1a | translate }} </nb-accordion-item-header>
+                      <nb-accordion-item-body>
+                        <cov-form-a-step-one-a></cov-form-a-step-one-a>
+                      </nb-accordion-item-body>
+                    </nb-accordion-item>
+                  </nb-accordion>
+                  <nb-accordion>
+                    <nb-accordion-item>
+                      <nb-accordion-item-header>{{ t.fah.heading1b | translate }}
+                      </nb-accordion-item-header>
+                      <nb-accordion-item-body>
+                        <cov-form-a-step-one-b></cov-form-a-step-one-b>
+                      </nb-accordion-item-body>
+                    </nb-accordion-item>
+                  </nb-accordion>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading2 | translate }}</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <cov-form-a-step-two></cov-form-a-step-two>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <cov-form-hr-break></cov-form-hr-break>
+            <nb-card class="prev-next">
+              <div class="btn-group">
+                <button class="social-distancing" nbButton disabled nbStepperNext (click)="updateStep($event)">prev</button>
+                <button class="social-distancing btn-outline-dark" nbButton matRipple nbStepperNext>next</button>
+              </div>
+            </nb-card>
+
+          </nb-step>
+          <cov-form-hr-break></cov-form-hr-break>
+          <nb-step [stepControl]="formathree"  class="just-breathe" label="{{ t.fah.step1 | translate }}" label="{{ t.fah.step2 | translate }}">
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading3 | translate }}</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <cov-form-a-step-three></cov-form-a-step-three>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header> {{ t.fah.heading4 | translate }}
+
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                <cov-form-a-step-four></cov-form-a-step-four>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading5 | translate }}</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <cov-form-a-step-five></cov-form-a-step-five>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading6 | translate }}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <cov-form-a-step-six></cov-form-a-step-six>
+
+                   </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading7 | translate }}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+              <cov-form-a-step-seven></cov-form-a-step-seven>
+              </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading8 | translate }}</nb-accordion-item-header>
+                <nb-accordion-item-body>
+
+
+
+                  <cov-form-a-step-eight-two></cov-form-a-step-eight-two>
+
+
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>{{ t.fah.heading9 | translate }}</nb-accordion-item-header>
+                <nb-accordion-item-body>
+
+
+                  <cov-form-a-step-nine></cov-form-a-step-nine>
+
+
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <cov-form-hr-break></cov-form-hr-break>
+            <nb-card class="prev-next">
+              <div class="btn-group">
+                <button class="social-distancing" nbButton matRipple nbStepperPrevious (click)="prevStep($event)">Prev</button>
+                <button class="social-distancing" nbButton disabled nbStepperNext>Next</button>
+              </div>
+            </nb-card>
+          </nb-step>
+        </nb-stepper>
+      </nb-card-body>
+      <nb-card-footer>
+        Interim reporting form for confirmed or probable cases of COVID-19
+      </nb-card-footer>
+    </nb-card>
+
+  </div>
+</div>
