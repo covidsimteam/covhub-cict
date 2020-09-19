@@ -78,7 +78,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;
+    this.currentTheme = 'material-light';
 
     this.authService.userObs
       .pipe(
@@ -95,11 +95,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         filter(({ tag }) => tag === 'context-menu'),
         map(({ item: { title } }) => title),
       ).subscribe((title: string) => {
-        title === HeaderComponent.LOGOUT ?
-          this.logout() :
+        if (title === HeaderComponent.LOGOUT) {
+          this.logout();
+        } else {
           this.navigateToMenuPage(
             title.toLowerCase().replace(/ /g, '_')
-          ); // pages are named profile and settings TODO create those pages
+          ); // TODO create pages named profile and settings
+        }
       });
 
     const { xl } = this.breakpointService.getBreakpointsMap();
@@ -122,6 +124,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   navigateToMenuPage(page: string) {
+    this.sidebarService.compact('menu-sidebar');
     this.router.navigateByUrl(page);
   }
 

@@ -19,10 +19,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Data Entry',
     icon: 'calendar-outline',
+    expanded: true,
     children: [
       {
+        title: 'Positives',
+        link: '/hub/secured/cases'
+      },
+      {
         title: 'Case Tracing',
-        link: '/hub/secured/casesandct'
+        link: '/hub/secured/cases/tracing'
       },
       {
         title: 'Form A',
@@ -45,7 +50,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/hub/secured/forms/point-of-entry',
       },
       {
-        title: 'Quarantine Facility',
+        title: 'Quarantine',
         link: '/hub/secured/forms/quarantine-facility',
       },
       {

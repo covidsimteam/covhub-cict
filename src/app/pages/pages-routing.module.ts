@@ -35,7 +35,7 @@ const routes: Routes = [{
       component: ECommerceComponent,
     },
     {
-      path: 'secured/casesandct',
+      path: 'secured/cases',
       canActivate: [AuthGuard],
       loadChildren: caseTracingModule,
     },

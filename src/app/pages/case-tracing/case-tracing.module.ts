@@ -31,6 +31,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NbButtonModule } from '@nebular/theme';
+import { PositivesComponent } from './positives/positives.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,7 @@ import { NbButtonModule } from '@nebular/theme';
     ContactTracingComponent,
     CaseTracingComponent,
     CaseBannerComponent,
-    NewCaseComponent, TaskStatsPieComponent
+    NewCaseComponent, TaskStatsPieComponent, PositivesComponent
   ],
 
   imports: [
@@ -61,6 +64,8 @@ import { NbButtonModule } from '@nebular/theme';
     MatCardModule,
     MatBadgeModule,
     MatToolbarModule,
+    MatPaginatorModule,
+    MatExpansionModule,
 
     CaseTracingRoutingModule,
 
