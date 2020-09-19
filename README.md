@@ -20,7 +20,3 @@
 - Angular 9+ & Typescript
 - Bootstrap 4+ & SCSS
 - Responsive layout
-
-## Documentation
-
-This template is using [Nebular](https://github.com/akveo/nebular) modules set, [here you can find documentation and other useful articles](https://hubs.ly/H0n4ZPt0)
