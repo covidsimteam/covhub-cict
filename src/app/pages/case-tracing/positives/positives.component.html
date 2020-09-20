@@ -1,22 +1,22 @@
 <nb-card size="giant">
   <nb-card-header>
-        <div class="row">
-          <nav  id="head">
-            <ul class="nav">
-              <li>
-                <a (click)="showNewCaseWindow()" class="iconav">
-                  <nb-icon icon="plus"></nb-icon>
-                </a>
-              </li>
-              <!-- <li>
+    <div class="row">
+      <nav id="head">
+        <ul class="nav">
+          <li>
+            <a (click)="showNewCaseWindow()" class="iconav">
+              <nb-icon icon="plus"></nb-icon>
+            </a>
+          </li>
+          <!-- <li>
                 <a href="#" (click)="showSettingsWindow()" class="iconav float-right">
                   <nb-icon icon="settings"></nb-icon>
                 </a>
               </li> -->
-            </ul>
-          </nav>
-          <span id="title">Positive Cases</span>
-        </div>
+        </ul>
+      </nav>
+      <span id="title">Positive Cases</span>
+    </div>
 
   </nb-card-header>
   <nb-card-body>
@@ -62,10 +62,10 @@
             <mat-expansion-panel [(expanded)]="element.expanded" hideToggle>
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  This is the expansion title
+                  Zira Bhai
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <p>This is the primary content of the panel.</p>
+              <cov-case-overview></cov-case-overview>
             </mat-expansion-panel>
           </td>
         </ng-container>
@@ -73,13 +73,22 @@
         <!-- Weight Column -->
         <ng-container matColumnDef="phone">
           <th mat-header-cell *matHeaderCellDef> Phone </th>
-          <td mat-cell *matCellDef="let element" (click)="element.expanded = !element.expanded"> {{element.weight}} </td>
+          <td mat-cell *matCellDef="let element" (click)="element.expanded = !element.expanded"> {{element.weight}}
+          </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element" (click)="element.expanded = !element.expanded"> {{element.weight}}
+          </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="institution">
           <th mat-header-cell *matHeaderCellDef> Reporting Institution </th>
-          <td mat-cell *matCellDef="let element" (click)="element.expanded = !element.expanded"> {{ element.name }} </td>
+          <td mat-cell *matCellDef="let element" (click)="element.expanded = !element.expanded"> {{ element.name }}
+          </td>
         </ng-container>
 
         <!-- Symbol Column -->
@@ -89,7 +98,7 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="top-text" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
       <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30, 40, 50]" showFirstLastButtons></mat-paginator>

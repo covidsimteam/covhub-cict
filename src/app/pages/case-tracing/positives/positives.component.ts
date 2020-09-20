@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class PositivesComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['expando', 'case', 'institution', 'phone', 'investigator'];
+  displayedColumns: string[] = ['expando', 'case', 'institution', 'phone', 'address', 'investigator'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
