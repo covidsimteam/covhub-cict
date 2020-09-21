@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
-import { BehaviorSubject } from 'rxjs';
-import { ActiveTasksInfo } from '../../../@models/cict/covhub/active-tasks';
 import { ActiveTasksService } from '../active-tasks.service';
 
 @Component({

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ActiveTasksInfo } from '../../@models/cict/covhub/active-tasks';
-
+import { ActiveTasksInfo } from './case.model';
 
 @Injectable({
   providedIn: 'root'

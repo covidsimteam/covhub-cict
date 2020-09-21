@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -49,6 +49,7 @@ import { NbPopoverModule } from '@nebular/theme';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({ extend: true }),
 
     NbCardModule,

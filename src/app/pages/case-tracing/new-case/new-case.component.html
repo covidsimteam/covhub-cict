@@ -5,13 +5,13 @@
   </nb-card-header>
   <nb-card-body>
     <mat-dialog-content>
-      <!-- <form> -->
+      <form *ngIf="newCaseFormGroup" [formGroup]="newCaseFormGroup">
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
               <label for="reporDate" class="label">{{ t.fa.reportDate1 | translate }}
               </label>
-              <input nbInput fullWidth id="reportDate" [nbDatepicker]="reportDatePicker" [(ngModel)]="newTask.date">
+              <input nbInput fullWidth id="reportDate" [nbDatepicker]="reportDatePicker" formControlName="newTask.reportedDate">
               <nb-datepicker #reportDatePicker></nb-datepicker>
             </div>
           </div>
@@ -19,7 +19,7 @@
             <div class="form-group">
               <label for="testAgency" class="label">{{ t.fa.testAgency | translate }}
               </label>
-              <input nbInput fullWidth type="text" id="testAgency" [(ngModel)]="newTask.lab">
+              <input nbInput fullWidth type="text" id="testAgency" formControlName="newTask.reportedInstitution">
             </div>
           </div>
         </div>
@@ -29,14 +29,14 @@
             <div class="form-group">
               <label for="caseName" class="label">{{ t.fb.caseName | translate }}
               </label>
-              <input nbInput id="caseName" fullWidth type="text" [(ngModel)]="newTask.case">
+              <input nbInput id="caseName" fullWidth type="text" formControlName="newTask.caseName">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
               <label for="phone" class="label">{{ t.fb.phoneNumber | translate }}
               </label>
-              <input nbInput id="phone" fullWidth type="tel" [(ngModel)]="newTask.phone">
+              <input nbInput id="phone" fullWidth type="tel" formControlName="newTask.phoneNum">
             </div>
           </div>
         </div>
@@ -91,14 +91,14 @@
             <div class="form-group">
               <label for="municipal" class="label">{{ t.fb.vdc | translate }} / {{ t.fb.municipality | translate }}
               </label>
-              <input nbInput id="municipal" fullWidth type="text" [(ngModel)]="newTask.municipal">
+              <input nbInput id="municipal" fullWidth type="text" formControlName="newTask.municipality">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
               <label for="ward" class="label">{{ t.fb.wardNum | translate }}
               </label>
-              <input nbInput id="ward" fullWidth type="number" min="1" [(ngModel)]="newTask.ward">
+              <input nbInput id="ward" fullWidth type="number" min="1" formControlName="newTask.wardNumber">
             </div>
           </div>
         </div>
@@ -109,18 +109,18 @@
             <div class="form-group">
               <label for="tole" class="label">{{ t.fb.vdc | translate }} / {{ t.fb.tole | translate }}
               </label>
-              <input nbInput id="tole" fullWidth type="text" [(ngModel)]="newTask.tole">
+              <input nbInput id="tole" fullWidth type="text" formControlName="newTask.tole">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
               <label for="ward" class="label">{{ t.fb.caseInvestigator | translate }}
               </label>
-              <input nbInput id="ward" fullWidth type="number" min="1" [(ngModel)]="newTask.ward">
+              <input nbInput id="ward" fullWidth type="number" min="1" formControlName="newTask.caseInvestigator">
             </div>
           </div>
         </div>
-      <!-- </form> -->
+      </form>
 
     </mat-dialog-content>
   </nb-card-body>
