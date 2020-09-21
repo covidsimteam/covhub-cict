@@ -1,4 +1,5 @@
+import { Observable } from 'rxjs';
 export interface DialogData {
   newId: string;
-  title: string;
+  title: Observable<string | any>;
 }

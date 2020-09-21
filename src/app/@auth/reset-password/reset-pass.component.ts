@@ -4,6 +4,7 @@ import { NbResetPasswordComponent } from '@nebular/auth';
 
 import { AuthService } from '../core/auth.service';
 import { BasicAuth } from '../../@models/auth-response.model';
+import { HOME } from '../../app.conf';
 
 @Component({
   selector: 'ngx-reset-pass',
@@ -26,7 +27,7 @@ export class ResetPassComponent extends NbResetPasswordComponent implements OnIn
       this.authService.isAdmin() ||
       this.authService.isPrivileged ||
       !this.authService.isInPublicMode) {
-      this.router.navigate(['hub', 'home']);
+      this.router.navigateByUrl(HOME);
     }
   }
 
@@ -36,7 +37,7 @@ export class ResetPassComponent extends NbResetPasswordComponent implements OnIn
     this.authService.login(email, password)
       .subscribe((val: BasicAuth.Response) => {
         if (BasicAuth.isSuccess(val)) {
-          this.router.navigateByUrl('/hub/home');
+          this.router.navigateByUrl(HOME);
         }
       });
   }

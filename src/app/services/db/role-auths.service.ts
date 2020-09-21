@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { mergeMap, scan } from 'rxjs/operators';
-import { IdPrefixService } from '../utils/id-prefix.service';
+import { IdPrefixService } from '../ids/id-prefix.service';
 
 @Injectable({
   providedIn: 'root'

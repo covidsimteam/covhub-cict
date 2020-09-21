@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MemoryAdapterService } from './memory-adapter.service';
+import { ReducersService } from './reducers.service';
 
-describe('MemoryAdapterService', () => {
-  let service: MemoryAdapterService;
+describe('ReducersService', () => {
+  let service: ReducersService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MemoryAdapterService);
+    service = TestBed.inject(ReducersService);
   });
 
   it('should be created', () => {

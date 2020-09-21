@@ -14,6 +14,3 @@ export interface ActiveTasksInfo {
     tole?: string;
 }
 
-export abstract class ActiveTasksData {
-    abstract getActiveTasksData(): BehaviorSubject<ActiveTasksInfo[]>;
-}

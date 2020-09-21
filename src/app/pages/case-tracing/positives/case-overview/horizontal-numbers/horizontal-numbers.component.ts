@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -22,7 +22,7 @@ export class HorizontalNumbersComponent implements OnDestroy {
         labels: ['Contacts', 'B1 Forms', 'B2 Forms', 'Swabs', '+ve Contacts'],
         datasets: [
           {
-            label: 'Traced',
+            label: 'Current',
             backgroundColor: colors.infoLight,
             borderWidth: 1,
             data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],

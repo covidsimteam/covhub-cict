@@ -8,11 +8,12 @@ import { BasicAuth } from '../../@models/auth-response.model';
 import { CurrentUser } from '../../@models/domain.model';
 import { HubUser, isHubUser } from '../../@models/user.model';
 import { EnvironmentService } from '../../services/env/environment.service';
-import { IdPrefixService } from '../../services/utils/id-prefix.service';
+import { IdPrefixService } from '../../services/ids/id-prefix.service';
 import { AuthToken } from '../access/token.model';
 import { RolesService } from '../roles/roles.service';
 import { AuthResult } from './auth-result.model';
 import { PasswordAuthStrategyOptions } from './password-auth-strategy-options';
+import { HOME } from '../../app.conf';
 
 @Injectable({
   providedIn: 'root',
@@ -173,7 +174,7 @@ export class AuthService extends NbAuthService {
 
   logout(strategy: string = 'email'): Observable<NbAuthResult> {
     this.removeCredentials();
-    this.router.navigate(['/hub/home']);
+    this.router.navigate([HOME]);
     this.publicLogin();
     return from([new NbAuthResult(
       true,

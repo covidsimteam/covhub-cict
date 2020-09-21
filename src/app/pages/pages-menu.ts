@@ -1,19 +1,12 @@
 import { NbMenuItem } from '@nebular/theme';
+import { HOME } from '../app.conf';
 
 export const MENU_ITEMS: NbMenuItem[] = [
-  {
-    title: 'Core Panels',
-    icon: 'home-outline',
-    link: '/hub/home',
-    home: true,
-  },
-  {
-    title: 'Core Stats',
-    icon: 'activity-outline',
-    link: '/hub/stats',
-  },
+
   {
     title: 'Forms & Files',
+    icon: 'home-outline',
+    link: HOME,
     group: true,
   },
   {
@@ -23,55 +16,56 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Positives',
-        link: '/hub/secured/cases'
+        link: HOME,
+        home: true
       },
       {
         title: 'Case Tracing',
-        link: '/hub/secured/cases/tracing'
+        link: `${HOME}/tracing`
       },
       {
         title: 'Form A',
-        link: '/hub/secured/forms/form-a',
+        link: '/hub/forms/form-a',
       },
       {
         title: 'Form B1',
-        link: '/hub/secured/forms/form-b1',
+        link: '/hub/forms/form-b1',
       },
       {
         title: 'Form B2',
-        link: '/hub/secured/forms/form-b2',
+        link: '/hub/forms/form-b2',
       },
       // {
       //   title: 'Form X',
-      //   link: '/hub/secured/forms/form-x',
+      //   link: '/hub/forms/form-x',
       // },
       {
         title: 'Point of Entry',
-        link: '/hub/secured/forms/point-of-entry',
+        link: '/hub/forms/point-of-entry',
       },
       {
         title: 'Quarantine',
-        link: '/hub/secured/forms/quarantine-facility',
+        link: '/hub/forms/quarantine-facility',
       },
       {
         title: 'RDT Lab',
-        link: '/hub/secured/forms/rdt-lab',
+        link: '/hub/forms/rdt-lab',
       },
       {
         title: 'PCR Lab',
-        link: '/hub/secured/forms/pcr-lab',
+        link: '/hub/forms/pcr-lab',
       },
       {
         title: 'Isolation',
-        link: '/hub/secured/forms/isolation',
+        link: '/hub/forms/isolation',
       },
       {
         title: 'Hospital',
-        link: '/hub/secured/forms/hospital',
+        link: '/hub/forms/hospital',
       },
       {
         title: 'Municipality',
-        link: '/hub/secured/forms/municipality',
+        link: '/hub/forms/municipality',
       },
     ],
   },
@@ -81,15 +75,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'PCR Tests',
-        link: '/hub/secured/tables/pcr',
+        link: '/hub/tables/pcr',
       },
       {
         title: 'RDT Tests',
-        link: '/hub/secured/tables/rdt',
+        link: '/hub/tables/rdt',
       },
       {
         title: 'Returnees',
-        link: '/hub/secured/tables/returnee',
+        link: '/hub/tables/returnee',
       },
     ],
   }

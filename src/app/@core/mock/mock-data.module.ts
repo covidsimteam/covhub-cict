@@ -21,7 +21,7 @@ import { CountryOrderService } from './country-order.service';
 import { StatsProgressBarService } from './stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './visitors-analytics.service';
 import { SecurityCamerasService } from './security-cameras.service';
-import { ActiveTasksService } from './active-tasks.service';
+import { ActiveTasksService } from '../../pages/case-tracing/active-tasks.service';
 
 const SERVICES = [
   UserService,

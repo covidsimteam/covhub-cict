@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NbRegisterComponent } from '@nebular/auth';
 import { BasicAuth } from '../../@models/auth-response.model';
 import { AuthService } from '../core/auth.service';
+import { HOME } from '../../app.conf';
 
 @Component({
   selector: 'ngx-register',
@@ -21,7 +22,7 @@ export class RegisterComponent extends NbRegisterComponent implements OnInit {
   showMessages = { error: null, success: null };
   submitted = false;
 
-  private returnUrl: string = '/hub/home';
+  private returnUrl: string = HOME;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -48,7 +49,7 @@ export class RegisterComponent extends NbRegisterComponent implements OnInit {
     this.authService.signUp(email, password)
       .subscribe((val: BasicAuth.Response) => {
         if (BasicAuth.isSuccess(val)) {
-          this.router.navigateByUrl('/hub/home');
+          this.router.navigateByUrl(HOME);
         }
       });
   }

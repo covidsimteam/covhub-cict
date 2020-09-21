@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-header>
     <button class="close mat-button" mat-dialog-close> X </button>
-    <h2 mat-dialog-title>{{ data.title }}</h2>
+    <h2 mat-dialog-title>{{ data.title | async }}</h2>
   </nb-card-header>
   <nb-card-body>
     <mat-dialog-content>

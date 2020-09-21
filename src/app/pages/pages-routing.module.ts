@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../@auth/guards/auth.guard';
-import { DashboardComponent } from '../@comp/dashboard/dashboard/dashboard.component';
-import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { PagesComponent } from './pages.component';
 import { ProfileComponent } from './profile/profile/profile.component';
@@ -27,25 +25,17 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'home',
-      component: DashboardComponent,
-    },
-    {
-      path: 'stats',
-      component: ECommerceComponent,
-    },
-    {
-      path: 'secured/cases',
+      path: 'cases',
       canActivate: [AuthGuard],
       loadChildren: caseTracingModule,
     },
     {
-      path: 'secured/forms',
+      path: 'forms',
       canActivate: [AuthGuard],
       loadChildren: formsModule,
     },
     {
-      path: 'secured/maps',
+      path: 'maps',
       canActivate: [AuthGuard],
       loadChildren: mapsModule,
     },
@@ -54,12 +44,12 @@ const routes: Routes = [{
       loadChildren: chartsModule,
     },
     {
-      path: 'secured/tables',
+      path: 'tables',
       canActivate: [AuthGuard],
       loadChildren: tablesModule,
     },
     {
-      path: 'secured/profile',
+      path: 'profile',
       canActivate: [AuthGuard],
       component: ProfileComponent
     },

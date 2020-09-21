@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, ReplaySubject, from } from 'rxjs';
-import { NewAbilityService } from './new-ability.service';
-import { AuthService } from '../@auth/core/auth.service';
-import { HubUser } from '../@models/user.model';
 import { NbSearchService } from '@nebular/theme';
 import { map } from 'rxjs/operators';
+import { HubUser } from '../../@models/user.model';
+import { AuthService } from '../../@auth/core/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +18,6 @@ export class UserFacade {
   private readonly pageNumber = new BehaviorSubject<[number, number, number]>([0, 1, 1]);
 
   constructor(
-    private newable: NewAbilityService,
     private auth: AuthService,
     private search: NbSearchService,
   ) {
@@ -36,9 +34,9 @@ export class UserFacade {
     return this.auth.userObs;
   }
 
-  updateSearchCriteria(term: string, tag: {}) {
+  updateSearchCriteria(term: string, tag: {}): Observable<void> {
     // TODO use a debounced typeahead event based emitter in search service,
-    const searchCriteria = this.search.onSearchInput().pipe(
+    return this.search.onSearchInput().pipe(
       map((inp: any) => this.searchInput.next(inp))
     );
   }

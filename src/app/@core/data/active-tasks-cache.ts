@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActiveTasksInfo } from '../data/active-tasks';
+import { ActiveTasksInfo } from '../../@models/cict/covhub/active-tasks';
+
 
 @Injectable()
 export class ActiveTasksCacheService {
