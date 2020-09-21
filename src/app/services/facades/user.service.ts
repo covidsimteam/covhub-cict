@@ -34,9 +34,9 @@ export class UserFacade {
     return this.auth.userObs;
   }
 
-  updateSearchCriteria(term: string, tag: {}) {
+  updateSearchCriteria(term: string, tag: {}): Observable<void> {
     // TODO use a debounced typeahead event based emitter in search service,
-    const searchCriteria = this.search.onSearchInput().pipe(
+    return this.search.onSearchInput().pipe(
       map((inp: any) => this.searchInput.next(inp))
     );
   }
