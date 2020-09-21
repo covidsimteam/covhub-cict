@@ -1,11 +1,12 @@
 import { NbMenuItem } from '@nebular/theme';
+import { HOME } from '../app.conf';
 
 export const MENU_ITEMS: NbMenuItem[] = [
 
   {
     title: 'Forms & Files',
     icon: 'home-outline',
-    link: '/hub/cases',
+    link: HOME,
     group: true,
   },
   {
@@ -15,12 +16,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Positives',
-        link: '/hub/cases',
+        link: HOME,
         home: true
       },
       {
         title: 'Case Tracing',
-        link: '/hub/cases/tracing'
+        link: `${HOME}/tracing`
       },
       {
         title: 'Form A',

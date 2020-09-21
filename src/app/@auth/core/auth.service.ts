@@ -13,6 +13,7 @@ import { AuthToken } from '../access/token.model';
 import { RolesService } from '../roles/roles.service';
 import { AuthResult } from './auth-result.model';
 import { PasswordAuthStrategyOptions } from './password-auth-strategy-options';
+import { HOME } from '../../app.conf';
 
 @Injectable({
   providedIn: 'root',
@@ -173,7 +174,7 @@ export class AuthService extends NbAuthService {
 
   logout(strategy: string = 'email'): Observable<NbAuthResult> {
     this.removeCredentials();
-    this.router.navigate(['/hub/home']);
+    this.router.navigate([HOME]);
     this.publicLogin();
     return from([new NbAuthResult(
       true,
