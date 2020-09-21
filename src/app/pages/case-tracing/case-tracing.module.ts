@@ -30,6 +30,7 @@ import { CaseOverviewComponent } from './positives/case-overview/case-overview.c
 import { HorizontalNumbersComponent } from './positives/case-overview/horizontal-numbers/horizontal-numbers.component';
 import { PositivesComponent } from './positives/positives.component';
 import { TaskStatsPieComponent } from './task-stats-pie/task-stats-pie.component';
+import { NbPopoverModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { TaskStatsPieComponent } from './task-stats-pie/task-stats-pie.component
     NbSelectModule,
     NbDatepickerModule,
     NbUserModule,
+    NbPopoverModule,
     NbWindowModule.forChild({
       closeOnBackdropClick: false,
       closeOnEsc: true

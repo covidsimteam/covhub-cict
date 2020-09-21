@@ -31,7 +31,16 @@
             <ng-container *ngIf="element.expanded">
               <div class="row">
                 <div class="col-sm-6">
-                  <button nbButton appearance="outline" size="small">
+                  <button
+                    nbButton
+                    status="primary"
+                    appearance="outline"
+                    size="small"
+                    [nbPopover]="templateRefSave"
+                    nbPopoverPlacement="right"
+                    nbPopoverTrigger="hint"
+                    nbPopoverAdjustment="counterclockwise"
+                  >
                     <nb-icon icon="save-outline" (click)="element.expanded = !element.expanded">
                     </nb-icon>
                   </button>
@@ -40,7 +49,16 @@
               <br>
               <div class="row">
                 <div class="col-sm-6">
-                  <button nbButton appearance="outline" size="small">
+                  <button
+                    nbButton
+                    status="warning"
+                    appearance="outline"
+                    size="small"
+                    [nbPopover]="templateRefDelete"
+                    nbPopoverPlacement="right"
+                    nbPopoverTrigger="hint"
+                    nbPopoverAdjustment="counterclockwise"
+                  >
                     <nb-icon icon="trash-2-outline">
                     </nb-icon>
                   </button>
@@ -86,7 +104,7 @@
 
         <!-- Name Column -->
         <ng-container matColumnDef="institution">
-          <th mat-header-cell *matHeaderCellDef> Reporting Institution </th>
+          <th mat-header-cell *matHeaderCellDef> Institution </th>
           <td mat-cell *matCellDef="let element" (click)="element.expanded = !element.expanded"> {{ element.name }}
           </td>
         </ng-container>
@@ -105,3 +123,12 @@
     </div>
   </nb-card-body>
 </nb-card>
+
+
+<ng-template #templateRefSave>
+  <span>Save & Close</span>
+</ng-template>
+
+<ng-template #templateRefDelete>
+  <span>Delete & Close</span>
+</ng-template>

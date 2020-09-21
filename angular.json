@@ -117,7 +117,7 @@
               "budgets": [
                 {
                   "type": "allScript",
-                  "maximumWarning": "6mb"
+                  "maximumWarning": "7mb"
                 },
                 {
                   "type": "initial",
