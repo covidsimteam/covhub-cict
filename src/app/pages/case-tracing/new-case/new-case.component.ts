@@ -1,11 +1,17 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
-
-import { TranslationServiceEn } from '../../../services/i18n/translation-gen.service';
-
+import { ReplaySubject } from 'rxjs';
 import { ActiveTasksInfo } from '../../../@core/data/active-tasks';
-import { ActiveTasksService } from '../../../@core/mock/active-tasks.service';
 import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache';
+import { PROVINCES } from '../../../@core/data/province-districts.geo';
+import { ActiveTasksService } from '../../../@core/mock/active-tasks.service';
+import { TranslationServiceEn } from '../../../services/i18n/translation-gen.service';
+import { DialogData } from '../case.model';
+
+
+
+const OnDestroySubject = Symbol('OnDestroySubject');
 
 @Component({
   selector: 'cov-new-case',
@@ -13,6 +19,13 @@ import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache'
   styleUrls: ['./new-case.component.scss']
 })
 export class NewCaseComponent implements OnInit, OnDestroy {
+
+
+  provinces: string[];
+  destinationOpts: string[] | undefined;
+  addressOpts: string[] | undefined;
+  finalDestProvince: string = '';
+  districts = { destinationOpts: null, addressOpts: null };
 
   saveToCache = true;
   newTask: ActiveTasksInfo = {
@@ -30,14 +43,21 @@ export class NewCaseComponent implements OnInit, OnDestroy {
 
   activeTaskCacheService: ActiveTasksCacheService;
 
+  private [OnDestroySubject] = new ReplaySubject<true>(1);
+
+  showOtherOccupation = false;
+
   constructor(
     public t: TranslationServiceEn,
     private translator: TranslateService,
-    private activeTaskService: ActiveTasksService) {
+    private activeTaskService: ActiveTasksService,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+  ) {
       translator.use('en');
-    }
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.provinces = PROVINCES?.map(province => province.name);
     if (this.activeTaskCacheService.isCacheActive()) {
       this.newTask = this.activeTaskCacheService.getFromCache();
     }
@@ -47,12 +67,24 @@ export class NewCaseComponent implements OnInit, OnDestroy {
     if (this.saveToCache) {
       this.activeTaskCacheService.writeToCache(this.newTask);
     }
+
+    this[OnDestroySubject].next(true);
+    this[OnDestroySubject].complete();
+  }
+
+  get onDestroy$() {
+    return this[OnDestroySubject].asObservable();
   }
 
   addNewTask(event: any) {
     this.saveToCache = false;
     this.activeTaskCacheService.resetCache();
     // this.activeTaskService.createActiveTasksData(this.newTask);
+  }
+
+  changeDestProvince(event: string) {
+    this.finalDestProvince = event;
+    this.districts.destinationOpts = PROVINCES?.find(province => province.name === this.finalDestProvince)?.districts;
   }
 
 }

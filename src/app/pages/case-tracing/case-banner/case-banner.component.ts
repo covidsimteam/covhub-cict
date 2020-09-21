@@ -3,6 +3,8 @@ import { NbWindowService } from '@nebular/theme';
 import { NewCaseComponent } from '../new-case/new-case.component';
 import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache';
 
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'cov-case-banner',
   templateUrl: './case-banner.component.html',
@@ -11,19 +13,23 @@ import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache'
 export class CaseBannerComponent implements OnInit {
 
   activeTasksCacheService = new ActiveTasksCacheService();
-  constructor(private windowService: NbWindowService) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void { }
 
   showNewCaseWindow(): boolean {
-    this.windowService.open(NewCaseComponent, {
-      title: 'New Case',
-      windowClass: 'new-case-window',
-      context: {
-        activeTaskCacheService: this.activeTasksCacheService
+    const dialogRef = this.dialog.open(NewCaseComponent,
+      {
+        width: '60vw',
+        data: {
+          title: 'Add New Case',
+          newId: '12321'
+        }
       }
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
-
     return false;   // stop event propagation for <a> tag
   }
 

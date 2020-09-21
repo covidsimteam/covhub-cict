@@ -22,14 +22,14 @@ export class HorizontalNumbersComponent implements OnDestroy {
         labels: ['Contacts', 'B1 Forms', 'B2 Forms', 'Swabs', '+ve Contacts'],
         datasets: [
           {
-            label: 'Being Traced',
+            label: 'Traced',
             backgroundColor: colors.infoLight,
             borderWidth: 1,
             data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
           },
           {
-            label: 'Queued for Trace',
-            backgroundColor: colors.infoDark,
+            label: 'Queued',
+            backgroundColor: colors.warning,
             borderWidth: 1,
             data: [this.random(), this.random(), this.random(), this.random(), this.random(), this.random()],
           }

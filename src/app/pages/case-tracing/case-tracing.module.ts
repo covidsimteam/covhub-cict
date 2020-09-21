@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -13,7 +14,7 @@ import {
   NbActionsModule, NbButtonModule, NbCardModule,
 
   NbDatepickerModule,
-  NbIconModule, NbInputModule, NbUserModule, NbWindowModule
+  NbIconModule, NbInputModule, NbRadioModule, NbSelectModule, NbUserModule, NbWindowModule
 } from '@nebular/theme';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -28,6 +29,8 @@ import { CaseOverviewComponent } from './positives/case-overview/case-overview.c
 import { HorizontalNumbersComponent } from './positives/case-overview/horizontal-numbers/horizontal-numbers.component';
 import { PositivesComponent } from './positives/positives.component';
 import { TaskStatsPieComponent } from './task-stats-pie/task-stats-pie.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -50,6 +53,9 @@ import { TaskStatsPieComponent } from './task-stats-pie/task-stats-pie.component
 
     NbCardModule,
     NbInputModule,
+    NbIconModule,
+    NbRadioModule,
+    NbSelectModule,
     NbDatepickerModule,
     NbUserModule,
     NbWindowModule.forChild({
@@ -65,6 +71,9 @@ import { TaskStatsPieComponent } from './task-stats-pie/task-stats-pie.component
     MatCardModule,
     MatPaginatorModule,
     MatExpansionModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatRippleModule,
 
     CaseTracingRoutingModule,
 
