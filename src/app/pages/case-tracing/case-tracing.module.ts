@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { NbUser } from '@nebular/auth';
 import {
   NbActionsModule, NbButtonModule, NbCardModule,
 
@@ -29,8 +30,6 @@ import { CaseOverviewComponent } from './positives/case-overview/case-overview.c
 import { HorizontalNumbersComponent } from './positives/case-overview/horizontal-numbers/horizontal-numbers.component';
 import { PositivesComponent } from './positives/positives.component';
 import { TaskStatsPieComponent } from './task-stats-pie/task-stats-pie.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({

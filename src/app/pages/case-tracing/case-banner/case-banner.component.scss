@@ -3,14 +3,14 @@ table {
 }
 
 .mat-button-base {
-  margin: 6px 6px 6px 6px;
+  margin: 6px;
 }
 
 .iconav {
   speak: none;
 }
 
-#title {
+.title {
   vertical-align: middle;
   margin-top: 5px;
   margin-left: 15px;
@@ -49,7 +49,7 @@ table {
 
 .nav a:hover {
   background: #3366ff;
-  color: #fff
+  color: #fff;
 }
 
 .nav li::before {

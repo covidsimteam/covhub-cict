@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NbWindowService } from '@nebular/theme';
-import { NewCaseComponent } from '../new-case/new-case.component';
-import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache';
-
 import { MatDialog } from '@angular/material/dialog';
+import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache';
+import { NewCaseComponent } from '../new-case/new-case.component';
+
 
 @Component({
   selector: 'cov-case-banner',
@@ -28,7 +27,7 @@ export class CaseBannerComponent implements OnInit {
       }
     );
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      // console.log(`Dialog result: ${result}`);
     });
     return false;   // stop event propagation for <a> tag
   }
