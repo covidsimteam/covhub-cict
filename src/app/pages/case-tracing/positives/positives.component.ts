@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NewCaseComponent } from '../new-case/new-case.component';
+import { TranslationServiceEn } from '../../../services/i18n/translation-gen.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'cov-positives',
@@ -15,7 +17,9 @@ export class PositivesComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private t: TranslationServiceEn,
+    private translationService: TranslateService
   ) {
 
   }
@@ -31,7 +35,7 @@ export class PositivesComponent implements AfterViewInit {
       {
         width: '60vw',
         data: {
-          title: 'Add New Case',
+          title: this.translationService.get(this.t.fb.addNewCase),
           newId: '12321'
         }
       }

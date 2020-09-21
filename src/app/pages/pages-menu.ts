@@ -1,19 +1,12 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+
   {
-    title: 'Core Panels',
+    title: 'Forms & Files',
     icon: 'home-outline',
     link: '/hub/home',
     home: true,
-  },
-  {
-    title: 'Core Stats',
-    icon: 'activity-outline',
-    link: '/hub/stats',
-  },
-  {
-    title: 'Forms & Files',
     group: true,
   },
   {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActiveTasksCacheService } from '../../../@core/data/active-tasks-cache';
 import { NewCaseComponent } from '../new-case/new-case.component';
+import { TranslationServiceEn } from '../../../services/i18n/translation-gen.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -12,7 +14,11 @@ import { NewCaseComponent } from '../new-case/new-case.component';
 export class CaseBannerComponent implements OnInit {
 
   activeTasksCacheService = new ActiveTasksCacheService();
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private t: TranslationServiceEn,
+    private translationService: TranslateService
+  ) { }
 
   ngOnInit(): void { }
 
@@ -21,7 +27,7 @@ export class CaseBannerComponent implements OnInit {
       {
         width: '60vw',
         data: {
-          title: 'Add New Case',
+          title: this.translationService.get(this.t.fb.addNewCase),
           newId: '12321'
         }
       }
