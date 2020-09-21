@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { NewCaseComponent } from '../new-case/new-case.component';
 
 @Component({
   selector: 'cov-positives',
@@ -12,13 +14,34 @@ export class PositivesComponent implements AfterViewInit {
   displayedColumns: string[] = ['expando', 'case', 'institution', 'phone', 'address', 'investigator'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
+  constructor(
+    public dialog: MatDialog
+  ) {
+
+  }
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  showNewCaseWindow() {}
+  showNewCaseWindow() {
+    const dialogRef = this.dialog.open(NewCaseComponent,
+      {
+        width: '60vw',
+        data: {
+          title: 'Add New Case',
+          newId: '12321'
+        }
+      }
+    );
+    dialogRef.afterClosed().subscribe((result: any) => {
+      // console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
 
   showSettingsWindow() {}
 }

@@ -102,6 +102,24 @@
             </div>
           </div>
         </div>
+
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="tole" class="label">{{ t.fb.vdc | translate }} / {{ t.fb.tole | translate }}
+              </label>
+              <input nbInput id="tole" fullWidth type="text" [(ngModel)]="newTask.tole">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="ward" class="label">{{ t.fb.caseInvestigator | translate }}
+              </label>
+              <input nbInput id="ward" fullWidth type="number" min="1" [(ngModel)]="newTask.ward">
+            </div>
+          </div>
+        </div>
       <!-- </form> -->
 
     </mat-dialog-content>

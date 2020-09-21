@@ -37,6 +37,7 @@ export class NewCaseComponent implements OnInit, OnDestroy {
     district: '',
     municipal: '',
     ward: null,
+    tole: '',
     assignedTo: '',
     time: ''
   };
