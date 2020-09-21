@@ -1,13 +1,13 @@
 <nb-card class="medium">
     <nb-card-header>Contact Tracing</nb-card-header>
     <nb-card-body>
-        <table mat-table [dataSource]="contactTracingData" class="mat-elevation-z8">
+        <table mat-table [dataSource]="contactTracingService.getContactTracingData()" class="mat-elevation-z8">
             <!-- Contact Column -->
             <ng-container matColumnDef="contact">
                 <th mat-header-cell *matHeaderCellDef>Contact / Exposed</th>
                 <td mat-cell *matCellDef="let contact">{{ contact.contact }}</td>
             </ng-container>
-            
+
             <!-- Assigned to Column -->
             <ng-container matColumnDef="assignedTo">
                 <th mat-header-cell *matHeaderCellDef>Assigned To</th>

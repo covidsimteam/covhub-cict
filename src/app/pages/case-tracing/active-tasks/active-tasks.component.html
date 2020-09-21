@@ -2,7 +2,7 @@
     <nb-card-header>
       <cov-case-banner></cov-case-banner>
     </nb-card-header>
-    <nb-card-body *ngIf="(activeTasksData$ | async) as activeTaskData">
+    <nb-card-body *ngIf="(activeTasksService.getActiveTasksData() | async) as activeTaskData">
         <div class="row">
           <div class="col-sm-6">
             <table mat-table [dataSource]="activeTaskData" class="mat-elevation-z8" matSort>
